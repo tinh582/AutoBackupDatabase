@@ -49,7 +49,7 @@ def backup_sql():
         send_email("Sao lưu thất bại", f"Lỗi: {str(e)}")
         print("Lỗi khi sao lưu:", e)
 
-schedule.every().day.at("14:12").do(backup_sql)
+schedule.every().day.at("00:00").do(backup_sql)
 print("Bắt đầu lịch trình sao lưu. Các đợt sao lưu sẽ bắt đầu vào nửa đêm mỗi ngày.")
 while True:
     schedule.run_pending()
